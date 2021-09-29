@@ -35,14 +35,16 @@ letters = string.ascii_letters + string.digits
 #Inicia la automatiación de 100 accesos (verifica si el sitio web es susceptible a ataques por fuerza bruta) 
 for x in range(100):
 
-    #Se buscará dentro del sitio web los elementos que contengan un atributo name llamados ''access login''
+    #Se buscará dentro del sitio web los elementos que contengan un atributo name llamados ''client-username''
     usr = driver.find_element_by_id("client-username")
     usr.clear()
+    #Se introduce el valor que contiene la variable usr
     usr.send_keys("20189579-0")
+    #Se buscará dentro del sitio web los elementos que contengan un atributo name llamados ''client-password''
     psw = driver.find_element_by_id("client-password")
     str = ''.join(random.choice(letters) for i in range(random.randrange(6,10)))
     
-    #Se introduce el valor que contiene la variable password
+    #Se introduce el valor que contiene la variable psw
     psw.send_keys(str)
     print(str)
     
