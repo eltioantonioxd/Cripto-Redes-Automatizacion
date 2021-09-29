@@ -17,10 +17,7 @@ import string
 import time
 import random
 
-'''Carga el módulo webdriver para implementar
-las clases y métodos para el soporte de los
-diferentes navegadores'''
-
+#Carga el módulo webdriver para implementar las clases y métodos para el soporte de los diferentes navegadores
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
